@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>汽车消费嘉年华 · 中秋国庆营销活动</title>
+<style>
+  :root{
+    --red:#c0392b; --gold:#d4a017; --ink:#2b2b2b; --grey:#8a8a8a;
+    --bg:#f6f3ee;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  body{
+    font-family:"PingFang SC","Microsoft YaHei",-apple-system,sans-serif;
+    background:var(--bg); color:var(--ink); line-height:1.6;
+    min-height:100vh; overflow-x:hidden;
+  }
+  /* 顶部横幅 */
+  .hero{
+    position:relative; background:linear-gradient(135deg,#8e1f1f 0%,#c0392b 55%,#d9534f 100%);
+    color:#fff; text-align:center; padding:48px 20px 40px; overflow:hidden;
+  }
+  .hero::before,.hero::after{
+    content:""; position:absolute; border-radius:50%; background:rgba(255,255,255,.08);
+  }
+  .hero::before{width:260px;height:260px;top:-90px;left:-70px;}
+  .hero::after{width:200px;height:200px;bottom:-80px;right:-50px;}
+  .hero .festival{font-size:14px;letter-spacing:4px;color:#ffe6b3;opacity:.95;}
+  .hero h1{font-size:26px;font-weight:800;margin:10px 0 6px;letter-spacing:1px;position:relative;z-index:1;}
+  .hero .sub{font-size:14px;color:#fff;opacity:.9;position:relative;z-index:1;}
+  .hero .time-badge{
+    display:inline-block; margin-top:18px; background:rgba(255,255,255,.18);
+    border:1px solid rgba(255,255,255,.5); border-radius:30px;
+    padding:8px 22px; font-size:15px; font-weight:600; letter-spacing:1px;
+    backdrop-filter:blur(4px); position:relative; z-index:1;
+  }
+  .hero .time-badge b{color:#ffe6b3;}
+
+  /* 主体 */
+  .wrap{max-width:520px;margin:0 auto;padding:20px 16px 40px;}
+  .section-title{
+    display:flex;align-items:center;gap:10px;margin:6px 0 16px;
+    font-size:17px;font-weight:700;color:var(--ink);
+  }
+  .section-title::before{content:"";width:4px;height:18px;background:var(--red);border-radius:2px;}
+
+  /* 门店卡片 */
+  .card{
+    background:#fff;border-radius:16px;overflow:hidden;margin-bottom:22px;
+    box-shadow:0 4px 20px rgba(0,0,0,.07);
+  }
+  .card-head{
+    background:linear-gradient(120deg,#2b2b2b,#4a4a4a);color:#fff;
+    padding:18px 20px;position:relative;
+  }
+  .card-head .brand{
+    font-size:12px;color:#ffe6b3;letter-spacing:3px;font-weight:600;
+  }
+  .card-head .name{font-size:20px;font-weight:800;margin:4px 0 2px;}
+  .card-head .district{
+    display:inline-block;background:rgba(255,255,255,.16);border-radius:4px;
+    padding:1px 8px;font-size:12px;margin-right:6px;
+  }
+  .card-head .addr{font-size:13px;color:#ddd;margin-top:6px;}
+  .card-head .addr::before{content:"📍 ";}
+
+  .card-body{padding:18px 20px 20px;}
+  .gift-list{list-style:none;}
+  .gift-list li{
+    display:flex;gap:12px;padding:11px 0;border-bottom:1px dashed #eee;
+    align-items:flex-start;
+  }
+  .gift-list li:last-child{border-bottom:none;}
+  .gift-num{
+    flex:none;width:28px;height:28px;border-radius:50%;
+    background:linear-gradient(135deg,var(--red),#e06666);color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-size:14px;font-weight:800;margin-top:2px;
+  }
+  .gift-text{font-size:14px;color:#444;flex:1;}
+  .gift-text b{color:var(--red);}
+
+  .footer{
+    text-align:center;color:#aaa;font-size:12px;padding:10px 0 30px;letter-spacing:1px;
+  }
+</style>
+</head>
+<body>
+  <div class="hero">
+    <div class="festival">🎉 汽车消费嘉年华 🎉</div>
+    <h1>中秋 · 国庆 营销活动</h1>
+    <div class="sub">广汽丰田 · 限时购车礼遇</div>
+    <div class="time-badge">活动时间：<b>9月25日 - 10月7日</b></div>
+  </div>
+
+  <div class="wrap">
+    <div class="section-title">参与门店</div>
+
+    <!-- 门店一 -->
+    <div class="card">
+      <div class="card-head">
+        <div class="brand">GAC TOYOTA</div>
+        <div class="name">上海京丰行沪南路店</div>
+        <span class="district">浦东新区</span>
+        <div class="addr">上海市浦东新区园中路65号</div>
+      </div>
+      <div class="card-body">
+        <ul class="gift-list">
+          <li><span class="gift-num">1</span><span class="gift-text"><b>进店礼</b>：进店精美礼品（进店就送）</span></li>
+          <li><span class="gift-num">2</span><span class="gift-text"><b>膨胀礼</b>：预交666元3倍膨胀（铂智除外）</span></li>
+          <li><span class="gift-num">3</span><span class="gift-text"><b>订车礼</b>：参与砸金蛋100%中奖，空气净化器、大疆云台、空气炸锅、电饭煲、拉杆箱、两次至四次机油</span></li>
+          <li><span class="gift-num">4</span><span class="gift-text"><b>推荐礼</b>：转介绍可获得基础保养一次（包含工时）</span></li>
+          <li><span class="gift-num">5</span><span class="gift-text"><b>特价礼</b>：指定8台特价车</span></li>
+          <li><span class="gift-num">6</span><span class="gift-text"><b>金融礼</b>：0首付，0利息，超长5年贷</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 门店二 -->
+    <div class="card">
+      <div class="card-head">
+        <div class="brand">GAC TOYOTA</div>
+        <div class="name">上海京升行奉贤店</div>
+        <span class="district">奉贤区</span>
+        <div class="addr">上海市奉贤区南桥镇环城西路1500号</div>
+      </div>
+      <div class="card-body">
+        <ul class="gift-list">
+          <li><span class="gift-num">1</span><span class="gift-text"><b>进店礼</b>：进店精美礼品（进店就送）</span></li>
+          <li><span class="gift-num">2</span><span class="gift-text"><b>膨胀礼</b>：预交666元3倍膨胀（铂智除外）</span></li>
+          <li><span class="gift-num">3</span><span class="gift-text"><b>订车礼</b>：参与砸金蛋100%中奖，空气净化器、大疆云台、空气炸锅、电饭煲、拉杆箱、两次至四次机油</span></li>
+          <li><span class="gift-num">4</span><span class="gift-text"><b>推荐礼</b>：转介绍可获得基础保养一次（包含工时）</span></li>
+          <li><span class="gift-num">5</span><span class="gift-text"><b>特价礼</b>：指定8台特价车</span></li>
+          <li><span class="gift-num">6</span><span class="gift-text"><b>金融礼</b>：0首付，0利息，超长5年贷</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer">活动最终解释权归门店所有 · 详情请到店咨询</div>
+  </div>
+</body>
+</html>
