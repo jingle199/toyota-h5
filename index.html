@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
@@ -186,6 +186,8 @@
   .submit:active{transform:scale(.97);}
   .submit:disabled{opacity:.6;cursor:not-allowed;}
   .form-tip{font-size:11px;color:#bbb;text-align:center;margin-top:12px;line-height:1.5;}
+  .form-iframe{width:100%;height:880px;border:0;border-radius:14px;margin-top:18px;background:#fff;box-shadow:0 4px 14px rgba(0,0,0,.06);}
+  @media (max-width:480px){.form-iframe{height:780px;}}
   .form-link{
     display:block;text-align:center;margin-top:14px;font-size:13px;font-weight:600;
     color:var(--red);text-decoration:none;padding:11px;border:1px dashed var(--red);
@@ -291,17 +293,7 @@
         <h2>🎁 领取专属购车豪礼</h2>
         <p>留下联系方式，专属顾问将与您联系</p>
       </div>
-      <form id="signupForm" novalidate>
-        <div class="field">
-          <label>您的称呼 <em>*</em></label>
-          <input type="text" id="name" placeholder="请输入姓名" autocomplete="name" maxlength="20">
-        </div>
-        <div class="field">
-          <label>手机号码 <em>*</em></label>
-          <input type="tel" id="phone" placeholder="请输入11位手机号" autocomplete="tel" maxlength="11" inputmode="numeric">
-        </div>
-        <button type="submit" class="submit" id="submitBtn">立即预约</button>
-      </form>
+            <iframe src="https://docs.qq.com/form/page/DTHZuY29KVFdIZFRW" class="form-iframe" frameborder="0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Car Festival Sign-up"></iframe>
       <div class="form-tip">提交即表示同意我们收集上述信息用于活动联系<br>您的信息将严格保密，仅用于本次购车活动</div>
       <a href="https://docs.qq.com/form/page/DTHZuY29KVFdIZFRW" target="_blank" class="form-link">👉 也可直接在腾讯文档填写完整报名表</a>
     </div>
@@ -309,72 +301,6 @@
     <div class="footer">活动最终解释权归门店所有 · 详情请到店咨询</div>
   </div>
 
-  <!-- 成功弹窗 -->
-  <div class="toast" id="toast">
-    <div class="ico">✅</div>
-    <h3>预约成功！</h3>
-    <p>您的信息已提交，<br>专属顾问将尽快与您联系</p>
-    <span class="ok" onclick="closeToast()">好的</span>
-  </div>
-
-  <!-- 跳转提示 -->
-  <div class="toast" id="redirectToast">
-    <div class="ico">🔗</div>
-    <h3>已为您打开报名表</h3>
-    <p>请在弹出的新页面<br>完成信息登记并提交</p>
-    <span class="ok" onclick="closeRedirectToast()">好的</span>
-  </div>
-
-<script>
-  // 表单提交地址：腾讯文档收集表（提交后新标签打开，用户在收集表完成最终登记）
-  var FORM_ENDPOINT = "https://docs.qq.com/form/page/DTHZuY29KVFdIZFRW";
-
-  var form = document.getElementById('signupForm');
-  var nameInput = document.getElementById('name');
-  var phoneInput = document.getElementById('phone');
-  var submitBtn = document.getElementById('submitBtn');
-  var toast = document.getElementById('toast');
-
-  function validate() {
-    var ok = true;
-    nameInput.classList.remove('err');
-    phoneInput.classList.remove('err');
-    if (!nameInput.value.trim()) { nameInput.classList.add('err'); ok = false; }
-    var phone = phoneInput.value.trim();
-    if (!/^1[3-9]\d{9}$/.test(phone)) { phoneInput.classList.add('err'); ok = false; }
-    return ok;
-  }
-
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    if (!validate()) { alert('请正确填写姓名和11位手机号'); return; }
-
-    var name = nameInput.value.trim();
-    var phone = phoneInput.value.trim();
-
-    if (FORM_ENDPOINT) {
-      // 打开腾讯文档收集表（新标签），用户在收集表完成最终登记
-      submitBtn.disabled = true;
-      submitBtn.textContent = '正在打开...';
-      window.open(FORM_ENDPOINT, '_blank');
-      showRedirectToast();
-    } else {
-      // 未配置后端时的占位提示
-      showToast();
-    }
-  });
-
-  function showToast() { toast.classList.add('show'); }
-  function closeToast() { toast.classList.remove('show'); }
-
-  var redirectToast = document.getElementById('redirectToast');
-  function showRedirectToast() { redirectToast.classList.add('show'); }
-  function closeRedirectToast() { redirectToast.classList.remove('show'); }
-
-  // 数字输入过滤
-  phoneInput.addEventListener('input', function() {
-    this.value = this.value.replace(/\D/g, '');
-  });
-</script>
+  <script>/* form embedded via iframe; fill & submit handled by Tencent Docs */</script>
 </body>
 </html>
